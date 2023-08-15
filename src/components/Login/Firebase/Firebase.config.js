@@ -1,12 +1,11 @@
 console.log(process.env);
 const firebaseConfig = {
-    apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
-    authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
-    projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
-    storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
-    messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
-    appId: process.env.REACT_APP_FIREBASE_APP_ID,
-    measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID
+    apiKey: "AIzaSyDLgCZsn5LOh1IPpvuWx1DJbAnLQbTyI1Y",
+    authDomain: "school-driectory22-c33f9.firebaseapp.com",
+    projectId: "school-driectory22-c33f9",
+    storageBucket: "school-driectory22-c33f9.appspot.com",
+    messagingSenderId: "1081862824005",
+    appId: "1:1081862824005:web:ee18291cc5306e1951432c"
 };
 
 export default firebaseConfig;

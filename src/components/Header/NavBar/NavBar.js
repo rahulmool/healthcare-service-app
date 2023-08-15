@@ -56,9 +56,8 @@ const Navbar = () => {
                             noWrap
                             component="div"
                             sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
-                        > <HealingTwoToneIcon
-                                fontSize='large'
-                            />
+                        > 
+                        
                             Health Haven Hospital
                         </Typography>
 
@@ -144,9 +143,7 @@ const Navbar = () => {
                             align='center'
                             component="div"
                             sx={{ flexGrow: 1, pt: 2, display: { xs: 'flex', md: 'none' } }}
-                        >
-                            <HealingTwoToneIcon
-                                fontSize='large' />  Health Haven Hospital
+                        > Health Haven Hospital
                         </Typography>
                         <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
 

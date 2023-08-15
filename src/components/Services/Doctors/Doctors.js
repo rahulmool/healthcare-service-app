@@ -6,17 +6,26 @@ import useDocData from '../../../Hooks/useDocData';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import swal from 'sweetalert';
 import LoadingScreen from '../../LoadingScreen/LoadingScreen';
+import axios from 'axios';
+import useAuth from '../../../Hooks/useAuth';
+
 
 
 const Doctors = () => {
     const doctors = useDocData();
+    const { user } = useAuth();
 
-    const swalAlert = () => {
+    const swalAlert = (event, message) => {
         console.log('swal is clicked');
+        console.log(message);
+        console.log(user.displayName);
         return swal("Write the data here:", {
             content: "input",
         })
-            .then((value) => {
+            .then(async (value) => {
+                //const response = await axios.get('https://school-driectory22-c33f9-default-rtdb.firebaseio.com/.json');
+                const response = await axios.post('https://school-driectory22-c33f9-default-rtdb.firebaseio.com/Doctors.json', {doctorname:message,appointment:value,username:user.displayName});
+                console.log(response.data);
                 swal(`You Appointment data is :➥ ${value} You will get a confirmation Email soon if the slot is free. We are trying to make it automated asap. Till then be patient`);
             });
     }
@@ -67,7 +76,7 @@ const Doctors = () => {
                                                 </Typography>
                                             </CardActionArea>
                                             <CardActions sx={{ textAlign: "center" }}>
-                                                <Button onClick={swalAlert} sx={{ mt: 2, mb: 1 }} variant="contained" className="CheckButton">
+                                                <Button onClick={(event) => swalAlert(event, doctor.name)} sx={{ mt: 2, mb: 1 }} variant="contained" className="CheckButton">
                                                     Make an Appointment
                                                     <AddCircleIcon />
                                                 </Button>
